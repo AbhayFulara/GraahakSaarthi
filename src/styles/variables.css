@@ -1,0 +1,173 @@
+:root {
+  /* Fixed Brand Dark Navy (surfaces that stay deep navy in both modes) */
+  --color-brand-navy: #142c49;
+  --color-brand-navy-deep: #0f2238;
+
+  /* Adaptive Heading & Brand Text Tokens */
+  --color-navy: #142c49;
+  --color-navy-hover: #0f2238;
+  --color-navy-soft: #eef3f8;
+  --color-secondary-blue: #234e7a;
+  --color-secondary-blue-soft: #e9f0f7;
+  --color-accent-green: #20a36b;
+  --color-accent-green-hover: #1a8a5a;
+  --color-accent-green-soft: #e8f7f0;
+
+  /* Primary Button Tokens */
+  --color-primary-btn-bg: #142c49;
+  --color-primary-btn-hover: #0f2238;
+
+  /* Surfaces & Borders */
+  --color-bg: #f4f7fa;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f8fafc;
+  --color-header-bg: rgba(255, 255, 255, 0.94);
+  --color-hero-bg: linear-gradient(180deg, #ffffff 0%, #f4f7fa 100%);
+  --color-sidebar-bg: #142c49;
+  --color-footer-bg: #142c49;
+  --color-border: #e7edf4;
+  --color-border-strong: #cfd9e6;
+
+  /* Typography */
+  --color-text-primary: #172b43;
+  --color-text-secondary: #5c6c80;
+  --color-text-muted: #718096;
+  --color-text-on-dark: #ffffff;
+
+  /* Semantic Statuses */
+  --color-success: #1b8a5a;
+  --color-success-bg: #e7f6ee;
+  --color-success-border: #b7e4ce;
+
+  --color-info: #1d5a96;
+  --color-info-bg: #eaf2fb;
+  --color-info-border: #bfd6f0;
+
+  --color-warning: #a16207;
+  --color-warning-bg: #fef7e6;
+  --color-warning-border: #f3d796;
+
+  --color-danger: #b42318;
+  --color-danger-bg: #fef0ef;
+  --color-danger-border: #f5c2be;
+
+  --color-neutral: #475569;
+  --color-neutral-bg: #f1f5f9;
+  --color-neutral-border: #cbd5e1;
+
+  /* Tarazu (Weighing Scale) Tokens */
+  --tarazu-navy-deep: #0c1d33;
+  --tarazu-navy-base: #142c49;
+  --tarazu-navy-mid: #214975;
+  --tarazu-navy-specular: #4577ad;
+  --tarazu-navy-highlight: #7aaae0;
+  --tarazu-green-dark: #147a4f;
+  --tarazu-green-mid: #20a36b;
+  --tarazu-green-light: #36c486;
+  --tarazu-plate-stroke: #cbd6e4;
+  --tarazu-plate-consumer: #142c49;
+  --tarazu-plate-justice: #178d5b;
+  --tarazu-rim-stroke: rgba(255, 255, 255, 0.16);
+  --tarazu-shadow: rgba(15, 34, 56, 0.22);
+  --tarazu-glow: rgba(35, 78, 122, 0.08);
+
+  /* Font Families */
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-heading: 'Manrope', 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-pill: 9999px;
+
+  /* Elevation (Restrained & Subtle) */
+  --shadow-xs: 0 1px 2px rgba(20, 44, 73, 0.05);
+  --shadow-sm: 0 2px 8px rgba(20, 44, 73, 0.07);
+  --shadow-md: 0 10px 28px rgba(20, 44, 73, 0.11);
+
+  /* Layout Dimensions */
+  --sidebar-width: 264px;
+  --topbar-height: 64px;
+  --container-max: 1240px;
+
+  /* Focus Ring */
+  --focus-ring: 0 0 0 3px rgba(35, 78, 122, 0.24);
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.2, 0, 0, 1);
+  --transition-base: 220ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+[data-theme='dark'] {
+  --color-brand-navy: #0e1d33;
+  --color-brand-navy-deep: #091323;
+
+  --color-navy: #e6effa;
+  --color-navy-hover: #ffffff;
+  --color-navy-soft: #1b2f4a;
+  --color-secondary-blue: #7eb6ee;
+  --color-secondary-blue-soft: #182b44;
+  --color-accent-green: #24b476;
+  --color-accent-green-hover: #1e9c65;
+  --color-accent-green-soft: #133126;
+
+  --color-primary-btn-bg: #2563a8;
+  --color-primary-btn-hover: #1e538e;
+
+  --color-bg: #0b1523;
+  --color-surface: #122035;
+  --color-surface-muted: #172840;
+  --color-header-bg: rgba(11, 21, 35, 0.92);
+  --color-hero-bg: linear-gradient(180deg, #0d1829 0%, #0b1523 100%);
+  --color-sidebar-bg: #0c1728;
+  --color-footer-bg: #091220;
+  --color-border: #233753;
+  --color-border-strong: #324c70;
+
+  --color-text-primary: #e6effa;
+  --color-text-secondary: #aec2da;
+  --color-text-muted: #8ca4c0;
+  --color-text-on-dark: #ffffff;
+
+  --color-success: #4ad295;
+  --color-success-bg: #112d22;
+  --color-success-border: #1e5740;
+
+  --color-info: #7ab8f5;
+  --color-info-bg: #132842;
+  --color-info-border: #244a78;
+
+  --color-warning: #f5b942;
+  --color-warning-bg: #2c210b;
+  --color-warning-border: #5c4312;
+
+  --color-danger: #f87171;
+  --color-danger-bg: #321618;
+  --color-danger-border: #69272b;
+
+  --color-neutral: #b7c6d8;
+  --color-neutral-bg: #1c2c42;
+  --color-neutral-border: #304561;
+
+  --tarazu-navy-deep: #0e223d;
+  --tarazu-navy-base: #193860;
+  --tarazu-navy-mid: #28568e;
+  --tarazu-navy-specular: #568cc7;
+  --tarazu-navy-highlight: #8ec1f5;
+  --tarazu-green-dark: #168657;
+  --tarazu-green-mid: #24b476;
+  --tarazu-green-light: #44d394;
+  --tarazu-plate-stroke: rgba(203, 214, 228, 0.5);
+  --tarazu-plate-consumer: #142c49;
+  --tarazu-plate-justice: #178d5b;
+  --tarazu-rim-stroke: rgba(138, 191, 248, 0.28);
+  --tarazu-shadow: rgba(0, 0, 0, 0.45);
+  --tarazu-glow: rgba(86, 140, 199, 0.16);
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.25);
+  --shadow-sm: 0 3px 10px rgba(0, 0, 0, 0.32);
+  --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.42);
+
+  --focus-ring: 0 0 0 3px rgba(126, 182, 238, 0.3);
+}

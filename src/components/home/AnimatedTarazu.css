@@ -1,0 +1,149 @@
+.gs-tarazu-stage {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 4px 6px;
+}
+
+.gs-tarazu-aura {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 52%, var(--tarazu-glow) 0%, transparent 70%);
+}
+
+.gs-tarazu-svg {
+  width: 100%;
+  height: auto;
+  max-width: 390px;
+  overflow: visible;
+  display: block;
+}
+
+/* Plate Typography */
+.gs-tarazu-plate-text {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.045em;
+  user-select: none;
+}
+
+.gs-tarazu-plate-text--consumer {
+  fill: var(--tarazu-plate-consumer);
+}
+
+.gs-tarazu-plate-text--justice {
+  fill: var(--tarazu-plate-justice);
+}
+
+/* Physical Balancing Animation (6s smooth cycle, ±4deg tilt) */
+.gs-tarazu-beam-assembly {
+  transform-box: view-box;
+  transform-origin: 200px 112px;
+  animation: gs-tarazu-tilt 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+.gs-tarazu-hang-left {
+  transform-box: view-box;
+  transform-origin: 72px 126.5px;
+  animation: gs-tarazu-counter-tilt 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+.gs-tarazu-hang-right {
+  transform-box: view-box;
+  transform-origin: 328px 126.5px;
+  animation: gs-tarazu-counter-tilt 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes gs-tarazu-tilt {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(4deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes gs-tarazu-counter-tilt {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(4deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-4deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Bottom Caption: RIGHTS · EVIDENCE · RESOLUTION */
+.gs-tarazu-caption {
+  margin-top: 14px;
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.4;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gs-tarazu-beam-assembly,
+  .gs-tarazu-hang-left,
+  .gs-tarazu-hang-right {
+    animation: none;
+    transform: rotate(0deg);
+  }
+}
+
+@media (max-width: 900px) {
+  .gs-tarazu-stage {
+    max-width: 350px;
+  }
+
+  .gs-tarazu-caption {
+    font-size: 0.78rem;
+    letter-spacing: 0.11em;
+  }
+}
+
+@media (max-width: 640px) {
+  .gs-tarazu-stage {
+    max-width: 316px;
+  }
+
+  .gs-tarazu-caption {
+    margin-top: 10px;
+    font-size: 0.72rem;
+    letter-spacing: 0.09em;
+  }
+}

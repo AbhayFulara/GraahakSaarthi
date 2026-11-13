@@ -1,0 +1,448 @@
+.gs-journey-section {
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  padding-block: 44px 52px;
+  animation: gs-journey-enter 280ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.gs-journey-card {
+  max-width: 780px;
+  margin-inline: auto;
+  text-align: center;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 36px 28px 34px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gs-journey-heading {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: 0.015em;
+  color: var(--color-navy);
+  margin-bottom: 10px;
+}
+
+.gs-journey-description {
+  max-width: 600px;
+  font-size: 0.96rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  margin-bottom: 24px;
+}
+
+/* Trigger Button & Compact Selection Panel */
+.gs-journey-control-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gs-journey-trigger-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 24px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-accent-green);
+  background-color: var(--color-brand-navy);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(20, 44, 73, 0.16), 0 0 0 1px rgba(32, 163, 107, 0.25);
+  transition: transform 220ms ease, background-color 220ms ease, border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.gs-journey-trigger-btn:hover {
+  background-color: var(--color-brand-navy-deep);
+  border-color: var(--color-accent-green-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(20, 44, 73, 0.22), 0 0 0 2px rgba(32, 163, 107, 0.35);
+}
+
+.gs-journey-trigger-btn.is-open .gs-journey-trigger-chevron {
+  transform: rotate(180deg);
+}
+
+.gs-journey-trigger-chevron {
+  color: var(--color-accent-green);
+  transition: transform 220ms ease;
+}
+
+.gs-journey-options-panel {
+  margin-top: 14px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding: 12px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface-muted);
+  border: 1px solid var(--color-border-strong);
+  box-shadow: var(--shadow-md);
+  animation: gs-journey-panel-in 240ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.gs-journey-option-btn {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 200ms ease, background-color 200ms ease, transform 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.gs-journey-option-btn:hover {
+  border-color: var(--color-accent-green);
+  background-color: var(--color-accent-green-soft);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-xs);
+}
+
+.gs-journey-option-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.gs-journey-option-icon--navy {
+  background-color: var(--color-navy-soft);
+  color: var(--color-navy);
+}
+
+.gs-journey-option-icon--green {
+  background-color: var(--color-accent-green-soft);
+  color: var(--color-accent-green);
+}
+
+.gs-journey-option-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.gs-journey-option-title {
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--color-navy);
+}
+
+.gs-journey-option-desc {
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--color-text-secondary);
+}
+
+/* Modals — Properly scrollable with sticky header & always-accessible close button */
+.gs-journey-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  height: 100vh;
+  height: 100dvh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background-color: rgba(10, 20, 34, 0.76);
+  backdrop-filter: blur(4px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  animation: gs-journey-fade 220ms ease both;
+}
+
+.gs-journey-modal {
+  margin: auto;
+  width: min(1200px, 94vw);
+  max-height: calc(100vh - 32px);
+  max-height: calc(100dvh - 32px);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 24px 60px rgba(8, 17, 30, 0.45);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: gs-journey-scale-in 260ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.gs-journey-modal--video {
+  width: min(980px, 94vw);
+}
+
+.gs-journey-modal-header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-surface-muted);
+}
+
+.gs-journey-modal-heading-group {
+  min-width: 0;
+}
+
+.gs-journey-modal-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--color-navy);
+}
+
+.gs-journey-modal-subtitle {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  margin-top: 2px;
+}
+
+.gs-journey-modal-close {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-strong);
+  background-color: var(--color-surface);
+  color: var(--color-navy);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 180ms ease, border-color 180ms ease;
+}
+
+.gs-journey-modal-close:hover {
+  background-color: var(--color-navy-soft);
+  border-color: var(--color-secondary-blue);
+}
+
+/* Image Viewport */
+.gs-journey-image-viewport {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 16px;
+  background-color: var(--color-bg);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.gs-journey-full-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Video Container */
+.gs-journey-video-container {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 16px 20px 20px;
+  background-color: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.gs-journey-video-frame {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: calc(100dvh - 150px);
+  background-color: #091323;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border-strong);
+}
+
+.gs-journey-video-el {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.gs-journey-video-ended-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-accent-green-soft);
+  border: 1px solid var(--color-success-border);
+  color: var(--color-navy);
+  font-size: 0.85rem;
+  font-weight: 600;
+  flex-wrap: wrap;
+}
+
+.gs-journey-replay-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: var(--radius-sm);
+  border: none;
+  background-color: var(--color-accent-green);
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 180ms ease;
+}
+
+.gs-journey-replay-btn:hover {
+  background-color: var(--color-accent-green-hover);
+}
+
+.gs-journey-video-fallback {
+  padding: 32px 20px;
+  text-align: center;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Subtle Animations */
+@keyframes gs-journey-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gs-journey-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gs-journey-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes gs-journey-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gs-journey-section,
+  .gs-journey-options-panel,
+  .gs-journey-modal-backdrop,
+  .gs-journey-modal {
+    animation: none;
+  }
+
+  .gs-journey-trigger-btn,
+  .gs-journey-trigger-chevron,
+  .gs-journey-option-btn {
+    transition: none;
+  }
+
+  .gs-journey-trigger-btn:hover,
+  .gs-journey-option-btn:hover {
+    transform: none;
+  }
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .gs-journey-section {
+    padding-block: 32px 40px;
+  }
+
+  .gs-journey-card {
+    padding: 26px 18px 24px;
+  }
+
+  .gs-journey-heading {
+    font-size: 1.38rem;
+  }
+
+  .gs-journey-options-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .gs-journey-modal-backdrop {
+    padding: 10px;
+  }
+
+  .gs-journey-modal {
+    width: 96vw;
+    max-height: calc(100vh - 20px);
+    max-height: calc(100dvh - 20px);
+  }
+
+  .gs-journey-modal-header {
+    padding: 12px 14px;
+  }
+
+  .gs-journey-video-container,
+  .gs-journey-image-viewport {
+    padding: 12px;
+  }
+}

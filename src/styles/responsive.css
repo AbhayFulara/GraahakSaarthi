@@ -1,0 +1,56 @@
+@media (max-width: 1024px) {
+  .gs-grid-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .gs-desktop-only {
+    display: none !important;
+  }
+
+  .gs-container {
+    padding-inline: 16px;
+  }
+
+  .gs-grid-2,
+  .gs-grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .gs-card-header,
+  .gs-card-body,
+  .gs-card-footer {
+    padding-inline: 16px;
+  }
+
+  .gs-page-title {
+    font-size: 1.375rem;
+  }
+}
+
+@media print {
+  .gs-sidebar,
+  .gs-topbar,
+  .gs-case-subnav,
+  .gs-no-print {
+    display: none !important;
+  }
+
+  .gs-app-content {
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .gs-print-only {
+    display: block !important;
+  }
+
+  body {
+    background: #ffffff !important;
+  }
+}
+
+.gs-print-only {
+  display: none;
+}
